@@ -12,17 +12,21 @@ public class SeleniumTest extends BaseTest {
 
     @Test
     void goToFacebookLoginPage() {
-        String elementKey = "signInButton";
+
 
         LOGGER.info("Page Title : " + webDriver.getTitle());
+        sendKeys("signInButton", "Faruk AKYOL");
 
+
+    }
+
+
+    public void sendKeys(String elementKey, String data) {
         DriverContext.waitElementClickable(webDriver.findElement(ReadFiles.readLocator(elementKey)));
         boolean isDisplayed = webDriver.findElement(ReadFiles.readLocator(elementKey)).isDisplayed();
-        webDriver.findElement(ReadFiles.readLocator(elementKey)).sendKeys("Faruk AKYOL");
-
         Assertions.assertEquals(true, isDisplayed);
-
-
+        webDriver.findElement(ReadFiles.readLocator(elementKey)).sendKeys(data);
+        
     }
 
 
