@@ -1,0 +1,17 @@
+[
+  {
+    "key": "signInButton",
+    "value": "//*[@id='email']",
+    "type": "xpath"
+  },
+  {
+    "key": "username",
+    "value": "username",
+    "type": "id"
+  },
+  {
+    "key": "password",
+    "value": "password",
+    "type": "id"
+  }
+]
