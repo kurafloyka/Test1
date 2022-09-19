@@ -1,13 +1,13 @@
 [
   {
-    "key": "signInButton",
-    "value": "//*[@id='email']",
+    "key": "InsiderLogo",
+    "value": "//img[@src='https://useinsider.com/assets/img/logo-old.png']",
     "type": "xpath"
   },
   {
-    "key": "username",
-    "value": "username",
-    "type": "id"
+    "key": "moreMenu",
+    "value": "(//*[(@id='mega-menu-1')])[6]",
+    "type": "xpath"
   },
   {
     "key": "password",

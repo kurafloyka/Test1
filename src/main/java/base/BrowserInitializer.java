@@ -1,5 +1,6 @@
 package base;
 
+import config.Settings;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -30,9 +31,10 @@ public class BrowserInitializer extends Base {
 
                 webDriver = new ChromeDriver(chromeOptions);
                 webDriver.manage().window().maximize();
-                webDriver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
+                webDriver.manage().timeouts().pageLoadTimeout(80, TimeUnit.SECONDS);
+                webDriver.manage().timeouts().implicitlyWait(80, TimeUnit.SECONDS);
                 LOGGER.info("Browser is opened...");
-                //webDriver.get(Settings.testUrl);
+                webDriver.get(Settings.testUrl);
                 break;
 
             case IE:

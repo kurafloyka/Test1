@@ -5,28 +5,29 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.parallel.Execution;
 import org.junit.jupiter.api.parallel.ExecutionMode;
 
+import static base.DriverContext.WaitForPageToLoad;
+
 
 @Execution(ExecutionMode.CONCURRENT)
 public class SeleniumTest extends BaseTest {
 
 
     @Test
-    void goToFacebookLoginPage() {
+    void goToInsiderMainPage() {
 
 
         LOGGER.info("Page Title : " + webDriver.getTitle());
-        sendKeys("signInButton", "Faruk AKYOL");
-
-
-    }
-
-
-    public void sendKeys(String elementKey, String data) {
-        DriverContext.waitElementClickable(webDriver.findElement(ReadFiles.readLocator(elementKey)));
-        boolean isDisplayed = webDriver.findElement(ReadFiles.readLocator(elementKey)).isDisplayed();
+        DriverContext.waitElementClickable(webDriver.findElement(ReadFiles.readLocator("InsiderLogo")));
+        boolean isDisplayed = webDriver.findElement(ReadFiles.readLocator("InsiderLogo")).isDisplayed();
         Assertions.assertEquals(true, isDisplayed);
-        webDriver.findElement(ReadFiles.readLocator(elementKey)).sendKeys(data);
-        
+
+        webDriver.findElement(ReadFiles.readLocator("moreMenu")).click();
+
+        webDriver.findElement(ReadFiles.readLocator("careersMenu")).click();
+
+
+
+
     }
 
 
